@@ -86,6 +86,8 @@
 
 //Local storage
 
+// HW Day or Night
+
 window.addEventListener("load", init, false);
 
 
@@ -121,6 +123,3 @@ function init() {
 
 }
 
-
-// So it works
-// Get from GitHub
