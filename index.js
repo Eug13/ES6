@@ -121,4 +121,9 @@ function init() {
 
 }
 
+<<<<<<< HEAD
 // show me this commit
+=======
+
+// New commit
+>>>>>>> 8a85e80285c86002db9a59f2360b98c29191b0c7
