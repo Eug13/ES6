@@ -88,48 +88,150 @@
 
 // HW Day or Night
 
-window.addEventListener("load", init, false);
+// window.addEventListener("load", init, false);
 
 
-function init() {
+// function init() {
 
-    var btn3 = document.getElementById("btn3");
-    var btn4 = document.getElementById("btn4");
-    
-
+//     var btn3 = document.getElementById("btn3");
+//     var btn4 = document.getElementById("btn4");
 
 
-    btn3.onclick = function () {
-        window.localStorage.setItem("key", "white");
-        window.localStorage.setItem("key1", "Hello World");
-
-        show();
-
-    }
 
 
-    btn4.onclick = function () {
-        window.localStorage.setItem("key", "black");
-        window.localStorage.setItem("key1", "Good Night");
-        show();
+//     btn3.onclick = function () {
+//         window.localStorage.setItem("key", "white");
+//         window.localStorage.setItem("key1", "Hello World");
 
-    }
+//         show();
+
+//     }
 
 
-    function show() {
-        let out = document.getElementById("output");
-        let txt = document.getElementById("txt");
+//     btn4.onclick = function () {
+//         window.localStorage.setItem("key", "black");
+//         window.localStorage.setItem("key1", "Good Night");
+//         show();
 
-        let getStorage = window.localStorage.getItem("key");
-        let getStorage1 = window.localStorage.getItem("key1");
+//     }
 
-        out.style.backgroundColor = getStorage;
 
-        txt.style.color = "red";
-        txt.innerHTML= getStorage1;
-    };
+//     function show() {
+//         let out = document.getElementById("output");
+//         let txt = document.getElementById("txt");
 
-    show();
+//         let getStorage = window.localStorage.getItem("key");
+//         let getStorage1 = window.localStorage.getItem("key1");
 
+//         out.style.backgroundColor = getStorage;
+
+//         txt.style.color = "red";
+//         txt.innerHTML= getStorage1;
+//     };
+
+//     show();
+
+// }
+
+
+
+
+// Exampl1 Arrow function
+
+// const sum = function(first,second){
+//     return first+second;
+// }
+
+// console.log(sum(10,20));
+
+
+// Arrow 1
+
+// const arrow = (first,second) =>{
+//     return first+second;
+// }
+
+// console.log(arrow(30,20));
+
+// Arrow 2
+
+// const arrow2 = (first,second)=> first+second;
+// console.log(arrow2(30,70));
+
+
+
+// // Arrow 3 with single parameter
+
+// const arrow3 = multiple => multiple*2;
+// console.log(arrow3(70));
+// console.log(typeof arrow3);
+
+
+
+// Arrow 4 without  parameters
+
+// const arrow4 = () => {
+//     let arr = [1,2,3,4,5];
+//     let result=0;
+//     for (let i=0; i<arr.length;i++){
+//         console.log(arr[i]);
+//         result += arr[i];
+//     }
+// };
+// arrow4();
+
+
+// Cycle
+
+// let arr = [1,2,3,4,5];
+// let sum = 0;
+// arr.forEach(i => sum +=i); 
+// console.log(sum);
+
+
+// const obj = {
+//     name: "bill",
+
+//     printName: function () {
+//         setInterval(function () {
+//             console.log("name:" + this.name);//Problem with thisn in ES6
+//         }, 3000);
+//     }
+// }
+
+// obj.printName();
+
+
+// Same thing with arrow function
+
+// const obj = {
+//     name: "bill",
+
+//     printName: function () {
+//         setInterval( () => {
+//             console.log("name:" + this.name);//Own context in ES6
+//         }, 3000);
+//     }
+// }
+
+// obj.printName();
+
+
+const btn = document.querySelectorAll("button");
+
+btn.forEach((value, index) => {
+   // console.log(value);
+    value.addEventListener("click", init, false);
+
+});
+
+
+function init(e) {
+    let btn = e.target;
+    console.log(btn.innerText);
+
+const Screen = document.getElementById("screen");
+Screen.innerText += btn.innerText;
 }
+
 
