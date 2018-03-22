@@ -93,33 +93,43 @@ window.addEventListener("load", init, false);
 
 function init() {
 
-    show();
-
     var btn3 = document.getElementById("btn3");
+    var btn4 = document.getElementById("btn4");
+    
+
+
 
     btn3.onclick = function () {
         window.localStorage.setItem("key", "white");
-        show();
-    }
+        window.localStorage.setItem("key1", "Hello World");
 
-    var btn4 = document.getElementById("btn4");
+        show();
+
+    }
 
 
     btn4.onclick = function () {
         window.localStorage.setItem("key", "black");
+        window.localStorage.setItem("key1", "Good Night");
         show();
 
     }
 
 
-
     function show() {
         let out = document.getElementById("output");
+        let txt = document.getElementById("txt");
+
         let getStorage = window.localStorage.getItem("key");
+        let getStorage1 = window.localStorage.getItem("key1");
+
         out.style.backgroundColor = getStorage;
+
+        txt.style.color = "red";
+        txt.innerHTML= getStorage1;
     };
 
-
+    show();
 
 }
 
