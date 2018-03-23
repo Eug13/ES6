@@ -4,7 +4,7 @@ var HtmlPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-
+    devtool:"source-map",
     entry: './index.js',
 
     output: {
