@@ -217,42 +217,195 @@
 // obj.printName();
 
 
-const numbers = document.querySelectorAll(".num");
-const symbols = document.querySelectorAll(".symbol");
-const result = document.querySelector(".result");
-const cancel = document.querySelector(".cancel");
-const Screen = document.getElementById("screen");
 
-numbers.forEach((value, index) => {
-    value.addEventListener("click", Numberify, false);
-});
+// Calc
 
-symbols.forEach((value, index) => {
-    value.addEventListener("click", Sybolify, false);
-});
+// const numbers = document.querySelectorAll(".num");
+// const symbols = document.querySelectorAll(".symbol");
+// const result = document.querySelector(".result");
+// const cancel = document.querySelector(".cancel");
+// const Screen = document.getElementById("screen");
 
-function Numberify(e) {
-    let btn = e.target;
-    let num = parseInt(btn.innerText);
+// numbers.forEach((value, index) => {
+//     value.addEventListener("click", Numberify, false);
+// });
 
-    console.log(typeof num);
-
-    Screen.innerText += btn.innerText;
-};
-
-function Sybolify(e) {
-    let sym = e.target;
-    let symbol = sym.innerText;
-
-    // swith(getSymbol()){
-    //     case "*":
-
-    //     break;
-    // }
-
-    console.log(typeof sym.innerText);
-
-    Screen.innerText += sym.innerText;
-};
+// symbols.forEach((value, index) => {
+//     value.addEventListener("click", Sybolify, false);
+// });
 
 
+
+// function Numberify(e) {
+//     let btn = e.target;
+//     let num = parseInt(btn.innerText);
+
+//     console.log(typeof num);
+
+//     Screen.innerText += btn.innerText;
+// };
+
+// function Sybolify(e) {
+//     let sym = e.target;
+//     let symbol = sym.innerText;
+
+//     console.log(typeof sym.innerText);
+
+//     Screen.innerText += sym.innerText;
+// };
+
+// swith (){
+//     case "*":
+
+//     break;
+// }
+
+
+
+
+// Classwork 27.03.18
+
+// const ADD_PERSON = (id,name)=>{
+//     console.log(id,name);
+// }
+
+// ADD_PERSON(44,"Bill");
+
+
+// const ADD_PERSON = (id,name,surname)=>{
+//     console.log(id,name,surname);
+// }
+
+// ADD_PERSON(44,"Bill","Jackson");
+
+// Spred
+
+// const ADD_PERSON = (id,...Args)=>{
+//     console.log(id,Args);
+// }
+
+// ADD_PERSON(44,"Bill","Jackson",21);
+
+
+
+// const ADD_PERSON = (id, ...Args) => {
+//     console.log(id, Args);
+// }
+
+// let arr = ["Tom", "Devis", 33];
+// ADD_PERSON(44, ...arr);
+
+
+// CW
+
+// let arr1 = ["mon", "tue", "wed"];
+// let arr2 = ["fri", "sat"];
+
+// const WEEK = (...arr1, thu, ...arr2, sun) => {
+//     console.log(...arr1, thu, ...arr2, sun);
+// };
+// WEEK(...arr1, "thu", ...arr2, "sun");
+
+
+// const addPerson = (name,surname,age) =>  {
+//    return {
+//        name,
+//        surname,
+//        age,
+//        getHobby(){
+//            return "hacker";
+//        }
+//    }
+// };
+
+
+// const PERSON1 = addPerson("Bill","Gates",45);
+// const PERSON2 = addPerson("Tom","Hanks",35);
+// const PERSON3 = addPerson("Rob","Hater",55);
+
+
+// console.log(PERSON1,PERSON1.getHobby(),PERSON2,PERSON2.getHobby(),PERSON3,PERSON3.getHobby());
+
+
+
+
+// Example
+
+// let obj ={
+//     name:"Will",
+//     age:58
+// }
+
+// let {name} =  obj;
+// let {age} =  obj;
+
+// console.log(name + " "+ age);
+
+// // NEW
+
+// let obj ={
+//     name:"Bill",
+//     age:58
+// }
+
+// let {name:newname} =  obj;//rename variable in object
+// let {age} =  obj;
+
+// console.log(newname + " "+ age);
+// console.log(obj);
+
+// // Example
+
+// let arr =[
+//     "stive",
+//     "stivenson",
+//     45
+// ];
+
+// let[name,surname,age] = arr;
+
+// console.log(name,surname,age);
+
+
+// let arr =[
+//     "stive",
+//     "stivenson",
+//     45
+// ];
+
+// let[name, ,age] = arr;
+
+// console.log(name,age);
+
+
+// let arr = [
+//     "stive",
+//     "stivenson",
+//     45
+// ];
+
+
+// let [, , , job = "worker"] = arr;
+
+// console.log(arr);
+
+
+// Example
+
+// let name = "Bill";
+// let age = 48;
+
+// console.log(`Hello my name is  ${name} I'm ${age}`);
+
+
+// One more Example
+
+// let name = "Bill";
+// let age = 48;
+
+// let tag = `<div>
+//             <h3> ${name}</h3>
+//             <h4> I'm ${age}</h4>
+//           </div> `;
+
+// document.write(tag);                  
