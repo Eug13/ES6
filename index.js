@@ -217,21 +217,42 @@
 // obj.printName();
 
 
-const btn = document.querySelectorAll("button");
+const numbers = document.querySelectorAll(".num");
+const symbols = document.querySelectorAll(".symbol");
+const result = document.querySelector(".result");
+const cancel = document.querySelector(".cancel");
+const Screen = document.getElementById("screen");
 
-btn.forEach((value, index) => {
-   // console.log(value);
-    value.addEventListener("click", init, false);
-
+numbers.forEach((value, index) => {
+    value.addEventListener("click", Numberify, false);
 });
 
+symbols.forEach((value, index) => {
+    value.addEventListener("click", Sybolify, false);
+});
 
-function init(e) {
+function Numberify(e) {
     let btn = e.target;
-    console.log(btn.innerText);
+    let num = parseInt(btn.innerText);
 
-const Screen = document.getElementById("screen");
-Screen.innerText += btn.innerText;
-}
+    console.log(typeof num);
+
+    Screen.innerText += btn.innerText;
+};
+
+function Sybolify(e) {
+    let sym = e.target;
+    let symbol = sym.innerText;
+
+    // swith(getSymbol()){
+    //     case "*":
+
+    //     break;
+    // }
+
+    console.log(typeof sym.innerText);
+
+    Screen.innerText += sym.innerText;
+};
 
 
