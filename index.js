@@ -571,11 +571,34 @@ class HunterDog extends Dog {
 
 let Killer = new HunterDog("killer", "boxer", 1, 100, "crazy power");
 
-Killer.getInfo();
-Killer.canHunt();
+// Killer.getInfo();
+// Killer.canHunt();
 
-Killer.getInfo();
+// Killer.getInfo();
 
-console.log(Killer._energy);
+// console.log(Killer._energy);
 
 // Dog.counter();
+
+
+class CrazyDog extends Dog {
+    constructor(name, type, age, energy, happiness) {
+        super(name, type, age, energy);//Parent constructor parameters
+        this._happiness = happiness;
+        console.log("CRAZY DOG");
+
+    }
+    getInfo() {
+        console.log(`${this._name}  ${this._type} ${this._age} ${this._energy} ${this._happiness}`);
+    }
+
+    canGoCrazy() {
+        // let timer = setInterval()
+        this._happiness -= 50;
+
+    }
+}
+
+let Loco = new CrazyDog("Loco", "mops", 1, 100, 200);
+Loco.canGoCrazy();
+Loco.getInfo();
