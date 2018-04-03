@@ -522,83 +522,208 @@
 // DIFERENCES BETWEEN OBJECT DOG 
 //Nasliduvannja
 
-class Dog {
-    constructor(name, type, age, energy) {
-        this._name = name;
-        this._type = type;
-        this._age = age;
-        this._energy = energy;
-        // this._counter = 0;
-        this.getInfo();
-        // Dog.counter();
-    }
+// class Dog {
+//     constructor(name, type, age, energy) {
+//         this._name = name;
+//         this._type = type;
+//         this._age = age;
+//         this._energy = energy;
+//         // this._counter = 0;
+//         this.getInfo();
+//         // Dog.counter();
+//     }
 
-    getInfo() {
-        console.log(`${this._name}  ${this._type} ${this._age} ${this._energy}`);
-    }
+//     getInfo() {
+//         console.log(`${this._name}  ${this._type} ${this._age} ${this._energy}`);
+//     }
 
-    // static counter() {
-    //  this._counter ++;
-    //      console.log(`Dog constructor ${this._counter}`);
-    // }
+//     // static counter() {
+//     //  this._counter ++;
+//     //      console.log(`Dog constructor ${this._counter}`);
+//     // }
 
-}
-
-
-let Bobik = new Dog("Bobik", "Dvorterer", 18, 100);
-
-// Bobik.getInfo();
-// console.log(Bobik.name);
+// }
 
 
-class HunterDog extends Dog {
-    constructor(name, type, age, energy, power) {
-        super(name, type, age, energy);//Parent constructor parameters
-        this._power = power;
-        console.log("HUNTER DOG");
+// let Bobik = new Dog("Bobik", "Dvorterer", 18, 100);
 
-    }
-    getInfo() {
-        console.log(`${this._name}  ${this._type} ${this._age} ${this._energy} ${this._power}`);
-    }
+// // Bobik.getInfo();
+// // console.log(Bobik.name);
 
-    canHunt() {
-        // let timer = setInterval()
-        this._energy -= 50;
 
-    }
-}
+// class HunterDog extends Dog {
+//     constructor(name, type, age, energy, power) {
+//         super(name, type, age, energy);//Parent constructor parameters
+//         this._power = power;
+//         console.log("HUNTER DOG");
 
-let Killer = new HunterDog("killer", "boxer", 1, 100, "crazy power");
+//     }
+//     getInfo() {
+//         console.log(`${this._name}  ${this._type} ${this._age} ${this._energy} ${this._power}`);
+//     }
+
+//     canHunt() {
+//         // let timer = setInterval()
+//         this._energy -= 50;
+
+//     }
+// }
+
+// let Killer = new HunterDog("killer", "boxer", 1, 100, "crazy power");
 
 // Killer.getInfo();
 // Killer.canHunt();
 
 // Killer.getInfo();
 
-// console.log(Killer._energy);
+// // console.log(Killer._energy);
 
-// Dog.counter();
+// // Dog.counter();
 
 
-class CrazyDog extends Dog {
-    constructor(name, type, age, energy, happiness) {
-        super(name, type, age, energy);//Parent constructor parameters
-        this._happiness = happiness;
-        console.log("CRAZY DOG");
+// class CrazyDog extends Dog {
+//     constructor(name, type, age, energy, happiness) {
+//         super(name, type, age, energy);//Parent constructor parameters
+//         this._happiness = happiness;
+//         console.log("CRAZY DOG");
 
-    }
-    getInfo() {
-        console.log(`${this._name}  ${this._type} ${this._age} ${this._energy} ${this._happiness}`);
-    }
+//     }
+//     getInfo() {
+//         console.log(`${this._name}  ${this._type} ${this._age} ${this._energy} ${this._happiness}`);
+//     }
 
-    canGoCrazy() {
-        // let timer = setInterval()
-        this._happiness -= 50;
+//     canGoCrazy() {
+//         // let timer = setInterval()
+//         this._happiness -= 50;
 
-    }
-}
+//     }
+// }
 
+// let Loco = new CrazyDog("Loco", "mops", 1, 100, 200);
+// Loco.canGoCrazy();
+// Loco.getInfo();
+
+// NEW CLASS WORK 03/04/18
+
+// let Cat = class {
+//     constructor(name, age) {
+//         this._name = name;
+//         this._age = age;
+
+//     }
+//     showInfo() {
+//         console.log(`name: ${this._name}  age:${this._age}`)
+//     }
+// }
+
+// let Mark = new Cat ("Mark",3);
+
+// Mark.showInfo();
+// console.dir(Mark);
+
+// ARRAYS  IN ES6 & WORK WITH IT
+
+// let set = new Set();
+// console.log(set);
+
+
+// set.add(1);
+// set.add(2);
+// set.add(3) .add(4) .add(5) .add(6) .add(6) .add(6) ;//set ne dodae odhakovi danni
+// console.log(set);
+// console.log(set.size);
+
+// console.log(`has: ${set.has(5)}`);
+// console.log(`delete: ${set.delete(5)}`);
+// console.log(`has: ${set.has(5)}`);
+// console.log(set.size);
+// console.log(set);
+
+
+
+// let arr = new Set([1,2,3,4,5,6,6,6,7,8,9]);
+// console.log(arr);
+// console.log(arr.size);
+
+
+// ASSOCIATED ARRAYS
+
+// let map = new Map();
+
+// console.dir(map);
+
+// map.set("name","Bill");
+// map.set("age", 39);
+
+// console.log(map);
+
+// console.log(map.get("name"));
+// console.log(map.get("age"));
+
+// console.log(`has: ${map.has("name")}`);
+// map.delete("age");
+// console.log(map);
+// console.log(map.size);
+
+// Other version
+
+// let obj = new Map([
+//     ["name","Tom"],
+//     ["surname","Tomson"],
+//     ["age",33]]);
+
+//     for (let item of obj.values()){
+//         console.log(`values: ${item}`)
+//     }
+
+//     for (let keys of obj.keys()){
+//         console.log(`keys: ${keys}`)
+//     }
+
+//     for (let entr of obj.entries()){
+//         console.log(`keys: ${entr[0]} || value: ${entr[1]}`)
+//     }
+
+// console.log(obj);
+
+
+
+//IMPORT !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+// import * as Person from './person';
+// console.log(Person);
+
+
+// Another variant of import
+
+// import {name,age} from './person';
+// console.log(`${name} ${age}`);
+
+
+// One more variant
+
+
+// import {name as Nikname , age} from './person';
+// console.log(`${Nikname} ${age}`);
+
+
+// IMPORT OF CLASS PERSON
+
+// import Person from './person' ;
+
+// let Bill = new Person();
+
+
+
+
+// MODULE SYSTEM
+
+import Dog from './dogs/dog'
+let Bobik = new Dog("Bobik", "Dvorterer", 18, 100);
+
+import HunterDog from './dogs/hunterDog'
+let Killer = new HunterDog("killer", "boxer", 1, 100, "crazy power");
+
+import CrazyDog from './dogs/crazyDog'
 let Loco = new CrazyDog("Loco", "mops", 1, 100, 200);
-Loco.canGoCrazy();
-Loco.getInfo();
