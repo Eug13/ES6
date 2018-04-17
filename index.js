@@ -719,11 +719,116 @@
 
 // MODULE SYSTEM
 
-import Dog from './dogs/dog'
-let Bobik = new Dog("Bobik", "Dvorterer", 18, 100);
+// import Dog from './dogs/dog'
+// let Bobik = new Dog("Bobik", "Dvorterer", 18, 100);
 
-import HunterDog from './dogs/hunterDog'
-let Killer = new HunterDog("killer", "boxer", 1, 100, "crazy power");
+// import HunterDog from './dogs/hunterDog'
+// let Killer = new HunterDog("killer", "boxer", 1, 100, "crazy power");
 
-import CrazyDog from './dogs/crazyDog'
-let Loco = new CrazyDog("Loco", "mops", 1, 100, 200);
+// import CrazyDog from './dogs/crazyDog'
+// let Loco = new CrazyDog("Loco", "mops", 1, 100, 200);
+
+
+
+//PROMISES
+
+
+let clientDocs = {
+    name: 'Luke',
+    surname: 'Skywalker',
+    nationality: 'Niga',
+    wasInPrison: false,
+    password: Date.now()
+}
+
+function OrderTrip(clientDocs) {
+    console.log('ORDER IN PROGRESS wait  2 sec');
+
+    let promise = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            let result = Math.random() > .5;
+            let result1 = clientDocs.wasInPrison;
+            if (result && result1 == false) {
+                resolve(clientDocs);
+            } else {
+                reject('Order rejected' + '  was in prison ? ' + clientDocs.wasInPrison);
+            }
+
+        }, 2000);
+    });
+    return promise;
+}
+
+
+
+
+OrderTrip(clientDocs)
+    .then(tourInfo)
+    .then(bookingHotel)
+    .then(BuyTickets)
+    .then(goToTrip)
+    .catch(reason => console.log(reason));
+
+function tourInfo(clientDocs) {
+    console.log('Tour Accepted');
+    console.log(clientDocs);
+
+    return new Promise(function (resolve, reject) {
+
+        let result = Math.random() > .5;
+        if (result) {
+            resolve(clientDocs);
+        } else {
+            reject('Tour is alredy closed try another !');
+        }
+    });
+}
+
+
+function bookingHotel(clientDocs) {
+    console.log('BOOKING HOTEL PROCESS!');
+
+    return new Promise(function (resolve, reject) {
+        //  console.log(clientDocs.nationality);
+        let result = clientDocs.nationality;
+
+        if (result == "Prime") {
+            resolve({
+                hotel: 'HILTON RESORT',
+                type: 'AI',
+                persons: '2',
+                capacity: '7 days'
+            });
+        } else {
+            reject('Because he is Nigga Hotel is overloaded !');
+        }
+    })
+}
+
+function BuyTickets(clientDocs) {
+
+    console.log('TICKETS IN PROCESS');
+    console.log('Hotel', clientDocs);
+
+
+    return new Promise(function (resolve, reject) {
+
+        let result = Math.random() > .5;
+        if (result) {
+            resolve({
+                transport: 'Aerobus',
+                type: 'econom',
+                persons: '2',
+                ways: 'one way'
+            });
+        } else {
+            reject('There is no tickets!');
+        }
+    })
+
+}
+
+function goToTrip(clientDocs) {
+
+    console.log('TRANSPORT', clientDocs, 'GO TO TRIP !!!');
+}
